@@ -7,7 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +363,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707124009891</updated>
       <workItem from="1707124023455" duration="179000" />
-      <workItem from="1707124944504" duration="466000" />
+      <workItem from="1707124944504" duration="7982000" />
     </task>
     <servers />
   </component>
