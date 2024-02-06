@@ -45,7 +45,8 @@ protected:
 	TObjectPtr<class UCameraComponent> CameraComp;
 	UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class USpringArmComponent> SpringArmComp;
-
+	UPROPERTY(VisibleAnywhere,Category = "Components")
+	TObjectPtr<class UFloatingPawnMovement> FloatingMovementComp;
 	//TObjectPtr<class APlayerController> PlayerController;
 
 protected:

@@ -7,9 +7,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Input/Actions/IA_Move.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Input/Actions/IA_Move.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Input/IMC_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Input/IMC_SpaceShip.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,6 +367,9 @@
       <updated>1707124009891</updated>
       <workItem from="1707124023455" duration="179000" />
       <workItem from="1707124944504" duration="8085000" />
+      <workItem from="1707202465262" duration="62000" />
+      <workItem from="1707202674704" duration="962000" />
+      <workItem from="1707204163858" duration="5358000" />
     </task>
     <servers />
   </component>
