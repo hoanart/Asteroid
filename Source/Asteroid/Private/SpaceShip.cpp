@@ -92,7 +92,7 @@ void ASpaceShip::Move(const FInputActionValue& Value)
 		const FVector RightDir = FRotationMatrix(YawRot).GetUnitAxis(EAxis::Y);
 		float Speed = 10000.0f;
 		 FString CombinedString = FString::Printf(TEXT("VALUE : %s"),*ForwardDir.ToString());
-		 GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Green,CombinedString);
+		 GEngine->AddOnScreenDebugMessage(-1,0.5f,FColor::Green,CombinedString);
 		FVector ForceVec = ForwardDir*MovementVec.Y*Speed;
 
 		AddMovementInput(ForwardDir,MovementVec.Y);
