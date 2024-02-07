@@ -53,7 +53,18 @@ void ASpaceShip::BeginPlay()
 void ASpaceShip::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	FVector Loc = GetActorLocation();
+	FHitResult Hit;
 
+	UGameplayStatics::GetPlayerController(GetWorld(),0)->GetHitResultUnderCursor(ECC_Visibility,true,Hit);
+
+	FVector Dir = Hit.Location - Loc;
+	FRotator Rot = FRotationMatrix::MakeFromX(Dir).Rotator();
+	AddActorLocalRotation(FRotator(0.f,Rot.Yaw,0.f)*DeltaTime*500.0f,true);
+	//MeshComp->SetWorldRotation(FMath::RInterpTo(MeshComp->GetComponentRotation(),FRotator(0.f,Rot.Yaw,0.f),DeltaTime,10.0f));
+	//Controller->SetControlRotation(MeshComp->GetComponentRotation());
+	//SetActorRotation(FRotator(0.f,Rot.Yaw*DeltaTime,0.f));
+	
 }
 
 // Called to bind functionality to input
@@ -91,20 +102,20 @@ void ASpaceShip::Move(const FInputActionValue& Value)
 		const FVector ForwardDir = FRotationMatrix(YawRot).GetUnitAxis(EAxis::X);
 		const FVector RightDir = FRotationMatrix(YawRot).GetUnitAxis(EAxis::Y);
 		float Speed = 10000.0f;
-		 FString CombinedString = FString::Printf(TEXT("VALUE : %s"),*ForwardDir.ToString());
+		 FString CombinedString = FString::Printf(TEXT("VALUE : %s"),*MovementVec.ToString());
 		 GEngine->AddOnScreenDebugMessage(-1,0.5f,FColor::Green,CombinedString);
 		FVector ForceVec = ForwardDir*MovementVec.Y*Speed;
 
+		
 		AddMovementInput(ForwardDir,MovementVec.Y);
 		AddMovementInput(RightDir,MovementVec.X);
-		
-		
-		
 	}
 }
 
 void ASpaceShip::Turn(const FInputActionValue& Value)
 {
+	
+	
 }
 
 void ASpaceShip::Shoot(const FInputActionValue& Value)
