@@ -8,13 +8,18 @@
     <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Input/IMC_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Input/IMC_SpaceShip.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -368,6 +373,12 @@
       <workItem from="1707202674704" duration="962000" />
       <workItem from="1707204163858" duration="11659000" />
       <workItem from="1707216778027" duration="335000" />
+      <workItem from="1707282365520" duration="8909000" />
+      <workItem from="1707296630178" duration="33000" />
+      <workItem from="1707297166756" duration="2628000" />
+      <workItem from="1707374626816" duration="10041000" />
+      <workItem from="1707385244492" duration="794000" />
+      <workItem from="1707459102401" duration="820000" />
     </task>
     <servers />
   </component>

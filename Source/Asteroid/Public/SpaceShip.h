@@ -31,11 +31,17 @@ public:
 	//Method
 	protected:
 	void Move(const FInputActionValue& Value);
-	void Turn(const FInputActionValue& Value);
 	void Shoot(const FInputActionValue& Value);
 
 
 	//Property
+protected:
+	UPROPERTY(EditAnywhere,Category = "Rotation")
+	float RotateRate;
+
+protected:
+	UPROPERTY(EditAnywhere,Category = "Projectile")
+	TSubclassOf<AActor> ProjectileClass;
 protected:
 	UPROPERTY(VisibleAnywhere,Category="Components")
 	TObjectPtr<class UCapsuleComponent> CapsuleComp;
@@ -56,9 +62,22 @@ protected:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category = "Input",meta = (AllowPrivateAccess = true))
 	TObjectPtr<class UInputAction> MoveAction;
 	
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category = "Input",meta = (AllowPrivateAccess = true))
-	TObjectPtr<class UInputAction> TurnAction;
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category = "Input",meta = (AllowPrivateAccess = true))
 	TObjectPtr<class UInputAction> ShootAction;
+};
+
+USTRUCT(BlueprintType)
+struct FCannonSockets
+{
+	GENERATED_BODY()
+	UPROPERTY( BlueprintReadOnly)
+	FName Socket1;
+	UPROPERTY(BlueprintReadOnly)
+	FName Socket2;
+	FCannonSockets()
+	{
+		Socket1 = "cannon1";
+		Socket2 = "cannon2";
+	}
 };
