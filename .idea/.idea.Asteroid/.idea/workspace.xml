@@ -8,10 +8,11 @@
     <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/Input/IMC_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Input/IMC_SpaceShip.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/BulletProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/BulletProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/ProjectileBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/ProjectileBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/ProjectileBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/ProjectileBase.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,6 +380,8 @@
       <workItem from="1707374626816" duration="10041000" />
       <workItem from="1707385244492" duration="794000" />
       <workItem from="1707459102401" duration="820000" />
+      <workItem from="1707802636257" duration="6866000" />
+      <workItem from="1707896375968" duration="10702000" />
     </task>
     <servers />
   </component>

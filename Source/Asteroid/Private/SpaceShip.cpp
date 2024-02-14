@@ -115,8 +115,8 @@ void ASpaceShip::Shoot(const FInputActionValue& Value)
 	FVector CannonLoc2 = MeshComp->GetSocketLocation(CannonSockets.Socket2);
 	DrawDebugSphere(GetWorld(),CannonLoc1,500.0f,10.0f,FColor::Green,true,-1,0,4.f);
 	
-	FString CombinedString = FString::Printf(TEXT("VALUE : %s"),*CannonLoc1.ToString());
-	GEngine->AddOnScreenDebugMessage(-1,0.2f,FColor::Green,CombinedString);
+	//FString CombinedString = FString::Printf(TEXT("VALUE : %s"),*CannonLoc1.ToString());
+	//GEngine->AddOnScreenDebugMessage(-1,0.2f,FColor::Green,CombinedString);
 	FRotator Rot = FRotationMatrix::MakeFromX(CannonLoc1).Rotator();
 	
 	FTransform SpawnTM = FTransform(MeshComp->GetSocketRotation(CannonSockets.Socket1),CannonLoc1);

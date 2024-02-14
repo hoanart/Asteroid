@@ -12,7 +12,7 @@ ABulletProjectile::ABulletProjectile()
 void ABulletProjectile::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-	//BoxComp->OnComponentBeginOverlap.AddDynamic(this,&ABulletProjectile::OnOverlap);
+	BoxComp->OnComponentBeginOverlap.AddDynamic(this,&ABulletProjectile::OnOverlap);
 	
 }
 

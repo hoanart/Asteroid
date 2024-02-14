@@ -35,5 +35,7 @@ protected:
 	UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class UProjectileMovementComponent> MovementComp;
 
-	
+protected:
+	UPROPERTY(EditAnywhere,Category="Damage")
+	float DamageAmount;
 };
