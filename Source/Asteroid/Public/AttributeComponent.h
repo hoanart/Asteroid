@@ -12,11 +12,12 @@ class ASTEROID_API UAttributeComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
-public:	
-	// Sets default values for this component's properties
-	UAttributeComponent();
+public:
 	UFUNCTION()
 	static UAttributeComponent* GetAttributes(AActor* FromActor);
+	// Sets default values for this component's properties
+	UAttributeComponent(const FObjectInitializer& ObjectInitializer);
+	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -24,17 +25,20 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
 public:
-	bool ApplyHealthChange(float Delta);
-
-public:
+	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
 	
+public:
+	UFUNCTION(BlueprintCallable)
+	bool ApplyHealthChange(float Delta);
+
+
+	
 protected:
-	UPROPERTY(EditDefaultsOnly,Category = "Attributes")
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly, Category = "Attributes")
 	float HealthMax;
-	UPROPERTY(VisibleAnywhere,Category = "Attributes")
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "Attributes")
 	float Health;
 	
 		

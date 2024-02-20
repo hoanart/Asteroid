@@ -27,18 +27,23 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
+		
 	//Method
+public:
+	void StartHitStop(FVector NormalImpulse);
 	protected:
 	void Move(const FInputActionValue& Value);
 	void Shoot(const FInputActionValue& Value);
 
-
+protected:
+	
+	void StopHitStop();
 	//Property
 protected:
 	UPROPERTY(EditAnywhere,Category = "Rotation")
 	float RotateRate;
-
+	UPROPERTY(EditAnywhere,Category = "Collision")
+	float ImpulseStrength;
 protected:
 	UPROPERTY(EditAnywhere,Category = "Projectile")
 	TSubclassOf<AActor> ProjectileClass;
@@ -53,6 +58,8 @@ protected:
 	TObjectPtr<class USpringArmComponent> SpringArmComp;
 	UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class UFloatingPawnMovement> FloatingMovementComp;
+	UPROPERTY(VisibleAnywhere,Category = "Components")
+	TObjectPtr<class UAttributeComponent> AttributeComp;
 	//TObjectPtr<class APlayerController> PlayerController;
 
 protected:
@@ -65,6 +72,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category = "Input",meta = (AllowPrivateAccess = true))
 	TObjectPtr<class UInputAction> ShootAction;
+
+private:
+	FTimerHandle StopHitTimer;
 };
 
 USTRUCT(BlueprintType)

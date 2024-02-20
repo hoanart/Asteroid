@@ -3,6 +3,8 @@
 
 #include "SpaceShip.h"
 
+#include "AsteroidBase.h"
+#include "AttributeComponent.h"
 #include "Camera/CameraComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
@@ -30,11 +32,14 @@ ASpaceShip::ASpaceShip()
 	FloatingMovementComp = CreateDefaultSubobject<UFloatingPawnMovement>("FloatingMovementComp");
 	FloatingMovementComp->MaxSpeed = 700.0f;
 
+	AttributeComp = CreateDefaultSubobject<UAttributeComponent>("AttributeComp");
+	ImpulseStrength = 5.0f;
 }
 
 void ASpaceShip::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
+	
 }
 
 // Called when the game starts or when spawned
@@ -94,8 +99,8 @@ void ASpaceShip::Move(const FInputActionValue& Value)
 		const FVector ForwardDir = FRotationMatrix(YawRot).GetUnitAxis(EAxis::X);
 		const FVector RightDir = FRotationMatrix(YawRot).GetUnitAxis(EAxis::Y);
 		float Speed = 10000.0f;
-		 FString CombinedString = FString::Printf(TEXT("VALUE : %s"),*MovementVec.ToString());
-		 GEngine->AddOnScreenDebugMessage(-1,0.2f,FColor::Green,CombinedString);
+		 // FString CombinedString = FString::Printf(TEXT("VALUE : %s"),*MovementVec.ToString());
+		 // GEngine->AddOnScreenDebugMessage(-1,0.2f,FColor::Green,CombinedString);
 		FVector ForceVec = ForwardDir*MovementVec.Y*Speed;
 
 		
@@ -128,5 +133,23 @@ void ASpaceShip::Shoot(const FInputActionValue& Value)
 
 	GetWorld()->SpawnActor<AActor>(ProjectileClass,SpawnTM,SpawnParams);
 	GetWorld()->SpawnActor<AActor>(ProjectileClass,SpawnTM2,SpawnParams);
+}
+
+
+
+void ASpaceShip::StartHitStop(FVector NormalImpulse)
+{
+	MeshComp->AddImpulse(FVector(-NormalImpulse.X,-NormalImpulse.Y,0.f)*ImpulseStrength);
+
+	CustomTimeDilation =0.0f;
+
+	GetWorld()->GetTimerManager().SetTimer(StopHitTimer,this,&ASpaceShip::StopHitStop,0.2f,false);
+}
+
+void ASpaceShip::StopHitStop()
+{
+	GetWorld()->GetTimerManager().ClearTimer(StopHitTimer);
+	//MeshComp->SetWorldRotation(FRotator(0.0f,0.0f,0.f));
+	CustomTimeDilation = 1.0f;
 }
 

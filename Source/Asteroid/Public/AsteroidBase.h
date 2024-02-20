@@ -26,13 +26,23 @@ public:
 protected:
 	UFUNCTION()
 	void OnHealthChanged(AActor* InstigatorActor,class UAttributeComponent* OwningComp,float NewHealth, float Delta);
+	UFUNCTION()
+	void OnOverlapped(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+	UFUNCTION()
+	void OnHit(class UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 protected:
-	UPROPERTY(VisibleAnywhere,Category = "Components")
-	TObjectPtr<class USphereComponent> SphereComp;
 	UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class UStaticMeshComponent> Mesh;
-	UPROPERTY(VisibleAnywhere,Category = "Components")
+	
+	 UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class UAttributeComponent> AttributeComp;
+	
+	UPROPERTY(VisibleAnywhere,Category = "Components")
+	TObjectPtr<class UProjectileMovementComponent> MovementComp;
 
-protected:
+	UPROPERTY(VisibleAnywhere,Category = "Components")
+	TObjectPtr<class UArrowComponent> ArrowComp;
+private:
+	FTimerHandle CollisionTimer;
+	bool bDoOnce;
 };
