@@ -3,8 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "EnvironmentQuery/EnvQueryTypes.h"
 #include "GameFramework/GameModeBase.h"
 #include "AsteroidGameModeBase.generated.h"
+
 
 /**
  * 
@@ -13,23 +15,37 @@ UCLASS()
 class ASTEROID_API AAsteroidGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-
+public:
 	AAsteroidGameModeBase();
 
 	virtual void StartPlay() override;
+protected:
+	UFUNCTION()
+	void SpawnBotTimerElapsed();
 
+	UFUNCTION(BlueprintNativeEvent)
+	void CountDownTimerElapsed();
+	UFUNCTION()
+	void OnQueryCompleted(class UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus::Type QueryStatus);
+public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite,Category = "Timer")
+	bool bDestroyAsteroid;
 protected:
 	UPROPERTY(EditDefaultsOnly,Category = "AI")
-	TArray<TSubclassOf<AActor>> AsteroidClasses;
+	TArray<TSubclassOf<class AAsteroidBase>> AsteroidClasses;
 	UPROPERTY(EditDefaultsOnly,Category = "AI")
 	TObjectPtr<class UEnvQuery> SpawnPawnQuery;
 	
 	UPROPERTY(EditDefaultsOnly,Category = "AI")
 	TObjectPtr<class UCurveFloat> DifficultyCurve;
-
+	
 	UPROPERTY(EditDefaultsOnly,Category = "AI")
 	float SpawnTimerInterval;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,Category = "Timer")
+	float Count;
+	
 protected:
 	FTimerHandle SpawnBotsTimer;
+	FTimerHandle CountDownTimer;
 };

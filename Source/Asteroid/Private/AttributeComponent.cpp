@@ -54,6 +54,16 @@ void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	// ...
 }
 
+const float& UAttributeComponent::GetHealth() const
+{
+	return Health;
+}
+
+bool UAttributeComponent::IsAlive() const
+{
+	return Health>0;
+}
+
 bool UAttributeComponent::ApplyHealthChange(float Delta)
 {
 	float OldHealth = Health;

@@ -7,6 +7,7 @@
 #include "InputActionValue.h"
 #include "SpaceShip.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnHealthUIUpdated);
 UCLASS()
 class ASTEROID_API ASpaceShip : public APawn
 {
@@ -35,10 +36,17 @@ public:
 	void Move(const FInputActionValue& Value);
 	void Shoot(const FInputActionValue& Value);
 
+;
 protected:
-	
+	UFUNCTION()
+	void OnHealthChanged(AActor* InstigatorActor,class UAttributeComponent* OwningComp,float NewHealth, float Delta);
 	void StopHitStop();
+
+
 	//Property
+public:
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthUIUpdated OnHealthUIUpdated;
 protected:
 	UPROPERTY(EditAnywhere,Category = "Rotation")
 	float RotateRate;
@@ -75,6 +83,7 @@ protected:
 
 private:
 	FTimerHandle StopHitTimer;
+
 };
 
 USTRUCT(BlueprintType)

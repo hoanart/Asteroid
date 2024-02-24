@@ -8,6 +8,8 @@
 #include "Camera/CameraComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Asteroid/AsteroidGameModeBase.h"
+#include "Blueprint/UserWidget.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -39,6 +41,7 @@ ASpaceShip::ASpaceShip()
 void ASpaceShip::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
+	AttributeComp->OnHealthChanged.AddDynamic(this,&ASpaceShip::OnHealthChanged);
 	
 }
 
@@ -135,6 +138,15 @@ void ASpaceShip::Shoot(const FInputActionValue& Value)
 	GetWorld()->SpawnActor<AActor>(ProjectileClass,SpawnTM2,SpawnParams);
 }
 
+void ASpaceShip::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent* OwningComp, float NewHealth, float Delta)
+{
+	if(Delta<0.0f)
+	{
+		FString CombindedString = FString::Printf(TEXT("Delta : %f"),Delta);
+		GEngine->AddOnScreenDebugMessage(-1,0.3f,FColor::Red,CombindedString);
+		OnHealthUIUpdated.Broadcast();
+	}
+}
 
 
 void ASpaceShip::StartHitStop(FVector NormalImpulse)

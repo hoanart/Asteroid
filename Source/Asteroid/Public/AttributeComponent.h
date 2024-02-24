@@ -25,6 +25,10 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+public:
+	UFUNCTION(BlueprintGetter)
+	const float& GetHealth() const;
 public:
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
@@ -32,13 +36,14 @@ public:
 public:
 	UFUNCTION(BlueprintCallable)
 	bool ApplyHealthChange(float Delta);
-
+	UFUNCTION(BlueprintPure,Category="Health")
+	bool IsAlive() const;
 
 	
 protected:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly, Category = "Attributes")
 	float HealthMax;
-	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "Attributes")
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,BlueprintGetter= "GetHealth", Category = "Attributes")
 	float Health;
 	
 		

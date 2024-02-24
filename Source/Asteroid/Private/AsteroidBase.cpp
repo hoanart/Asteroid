@@ -5,6 +5,7 @@
 
 #include "AttributeComponent.h"
 #include "SpaceShip.h"
+#include "Asteroid/AsteroidGameModeBase.h"
 #include "Components/ArrowComponent.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/MovementComponent.h"
@@ -30,6 +31,7 @@ AAsteroidBase::AAsteroidBase()
 	
 	ArrowComp = CreateDefaultSubobject<UArrowComponent>("ArrowComp");
 	ArrowComp->SetupAttachment(RootComponent);
+	SpawnTheta = 30.0f;
 	bDoOnce =true;
 }
 
@@ -45,7 +47,6 @@ void AAsteroidBase::PostInitializeComponents()
 void AAsteroidBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -54,6 +55,23 @@ void AAsteroidBase::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+void AAsteroidBase::CreateSubAsteroid()
+{
+	if(IsValid(SubAsteroidClass))
+	{
+		FVector Loc = GetActorLocation();
+		FRotator Rot1 = FRotator(0.f,GetActorRotation().Yaw+SpawnTheta,0.f);
+		FRotator Rot2 = FRotator(0.f,GetActorRotation().Yaw-SpawnTheta,0.f);
+		
+		UE_LOG(LogTemp,Display,TEXT("%s"),*Rot1.ToString());
+		
+			GetWorld()->SpawnActor<AActor>(SubAsteroidClass,Loc,Rot1);		
+			GetWorld()->SpawnActor<AActor>(SubAsteroidClass,Loc,Rot2);				
+	}
+
+}
+
 
 void AAsteroidBase::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent* OwningComp, float NewHealth, float Delta)
 {
@@ -64,6 +82,13 @@ void AAsteroidBase::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent
 	if(NewHealth<=0&&Delta<0.0f)
 	{
 		Destroy();
+		CreateSubAsteroid();
+		TObjectPtr<AAsteroidGameModeBase> GameMode = Cast<AAsteroidGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+		if(ensure(GameMode))
+		{
+			GameMode->bDestroyAsteroid = true;
+		}
+		
 	}
 }
 
@@ -99,4 +124,3 @@ void AAsteroidBase::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
 		}
 	}
 }
-
