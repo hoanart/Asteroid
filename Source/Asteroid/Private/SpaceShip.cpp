@@ -14,6 +14,7 @@
 #include "GameFramework/FloatingPawnMovement.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 ASpaceShip::ASpaceShip()
@@ -24,8 +25,12 @@ ASpaceShip::ASpaceShip()
 	
 	MeshComp = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
 	MeshComp->SetupAttachment(RootComponent);
-	RootComponent= MeshComp;
 	
+	RootComponent= MeshComp;
+	// TargetForMouseMesh = CreateDefaultSubobject<UStaticMeshComponent>("TargetForMouse");
+	// TargetForMouseMesh->SetupAttachment(RootComponent);
+	// TargetForMouseMesh->SetWorldLocation(FVector(0.f,0.f,-10000.f));
+	// TargetForMouseMesh->SetWorldScale3D(TargetForMouseMesh->GetComponentScale()*5000.0f);
 	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>("SpringArmComp");
 	SpringArmComp->SetupAttachment(RootComponent);
 	CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComp");
@@ -35,7 +40,14 @@ ASpaceShip::ASpaceShip()
 	FloatingMovementComp->MaxSpeed = 700.0f;
 
 	AttributeComp = CreateDefaultSubobject<UAttributeComponent>("AttributeComp");
+
+	BackGroundEffect = CreateDefaultSubobject<UParticleSystemComponent>("BackGroundEffect");
+	ExhaustEffect = CreateDefaultSubobject<UParticleSystemComponent>("ExhaustEffect");
+	ExhaustEffect->SetupAttachment(RootComponent);
+	
 	ImpulseStrength = 5.0f;
+
+	
 }
 
 void ASpaceShip::PostInitializeComponents()
@@ -68,7 +80,6 @@ void ASpaceShip::Tick(float DeltaTime)
 	FHitResult Hit;
 
 	UGameplayStatics::GetPlayerController(GetWorld(),0)->GetHitResultUnderCursor(ECC_Visibility,true,Hit);
-
 	FVector Dir = Hit.Location - Loc;
 	FRotator Rot = FRotationMatrix::MakeFromX(Dir).Rotator();
 	SetActorRotation(FMath::RInterpTo(MeshComp->GetComponentRotation(),FRotator(0.f,Rot.Yaw,0.f),DeltaTime,RotateRate));

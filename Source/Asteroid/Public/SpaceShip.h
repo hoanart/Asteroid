@@ -60,6 +60,8 @@ protected:
 	TObjectPtr<class UCapsuleComponent> CapsuleComp;
 	UPROPERTY(VisibleAnywhere,Category="Components")
 	TObjectPtr<class UStaticMeshComponent> MeshComp;
+	// UPROPERTY(VisibleAnywhere,Category="Components")
+	// TObjectPtr<class UStaticMeshComponent> TargetForMouseMesh;
 	UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class UCameraComponent> CameraComp;
 	UPROPERTY(VisibleAnywhere,Category = "Components")
@@ -68,6 +70,12 @@ protected:
 	TObjectPtr<class UFloatingPawnMovement> FloatingMovementComp;
 	UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class UAttributeComponent> AttributeComp;
+
+	UPROPERTY(VisibleAnywhere,Category = "Effects")
+	TObjectPtr<class UParticleSystemComponent> BackGroundEffect;
+	UPROPERTY(VisibleAnywhere,Category = "Effects")
+	TObjectPtr<class UParticleSystemComponent> ExhaustEffect;
+	
 	//TObjectPtr<class APlayerController> PlayerController;
 
 protected:
