@@ -36,7 +36,7 @@ public:
 	void Move(const FInputActionValue& Value);
 	void Shoot(const FInputActionValue& Value);
 
-;
+
 protected:
 	UFUNCTION()
 	void OnHealthChanged(AActor* InstigatorActor,class UAttributeComponent* OwningComp,float NewHealth, float Delta);

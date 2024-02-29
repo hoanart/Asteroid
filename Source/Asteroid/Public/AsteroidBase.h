@@ -14,7 +14,10 @@ class ASTEROID_API AAsteroidBase : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AAsteroidBase();
-
+	UStaticMeshComponent* GetMesh()const
+	{
+		return Mesh;
+	}
 protected:
 	virtual void PostInitializeComponents() override;
 	// Called when the game starts or when spawned
@@ -25,6 +28,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 protected:
 	void CreateSubAsteroid();
+	void CollisionTimerElapsed();
 protected:
 	UFUNCTION()
 	void OnHealthChanged(AActor* InstigatorActor,class UAttributeComponent* OwningComp,float NewHealth, float Delta);

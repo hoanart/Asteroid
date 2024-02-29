@@ -29,6 +29,8 @@ public:
 public:
 	UFUNCTION(BlueprintGetter)
 	const float& GetHealth() const;
+	UFUNCTION(BlueprintGetter)
+	const int& GetScore() const;
 public:
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
@@ -46,5 +48,6 @@ protected:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,BlueprintGetter= "GetHealth", Category = "Attributes")
 	float Health;
 	
-		
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,BlueprintGetter= "GetScore", Category = "Attributes")
+	int Score;
 };

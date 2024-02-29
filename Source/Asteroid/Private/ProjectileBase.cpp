@@ -48,7 +48,7 @@ void AProjectileBase::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor
 	//UE_LOG(LogTemp,Display,TEXT("Overlap : %s, %s"), *StaticClass()->GetName(),*GetClass()->GetName());
 	if(GetInstigator()!=OtherActor  )
 	{
-		UE_LOG(LogTemp,Display,TEXT("OtherActor1 : %s, %s"), *OtherActor->StaticClass()->GetName(),*OtherActor->GetClass()->GetName());
+		//UE_LOG(LogTemp,Display,TEXT("OtherActor1 : %s, %s"), *OtherActor->StaticClass()->GetName(),*OtherActor->GetClass()->GetName());
 
 		//OtherActor : Staticclass = Actor GetClass = BP_Bullet
 		if(GetClass()==OtherActor->GetClass())
@@ -59,7 +59,7 @@ void AProjectileBase::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor
 		TObjectPtr<UAttributeComponent> AttributeComp = Cast<UAttributeComponent>(UAttributeComponent::GetAttributes(OtherActor));
 		if(IsValid(AttributeComp))
 		{
-			UE_LOG(LogTemp,Display,TEXT("OtherActor2 : %s, %s"), *OtherActor->StaticClass()->GetName(),*OtherActor->GetClass()->GetName());
+		//	UE_LOG(LogTemp,Display,TEXT("OtherActor2 : %s, %s"), *OtherActor->StaticClass()->GetName(),*OtherActor->GetClass()->GetName());
 			AttributeComp->ApplyHealthChange(-DamageAmount);	
 			Explode();	
 		}

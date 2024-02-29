@@ -11,6 +11,7 @@
 /**
  * 
  */
+//DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFinishedGame);
 UCLASS()
 class ASTEROID_API AAsteroidGameModeBase : public AGameModeBase
 {
@@ -19,7 +20,13 @@ public:
 	AAsteroidGameModeBase();
 
 	virtual void StartPlay() override;
+	
+public:
+	void AddToTotalScore(const int& Score);
+	UFUNCTION(BlueprintImplementableEvent)
+	void FinishGame();
 protected:
+
 	UFUNCTION()
 	void SpawnBotTimerElapsed();
 
@@ -30,6 +37,7 @@ protected:
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite,Category = "Timer")
 	bool bDestroyAsteroid;
+
 protected:
 	UPROPERTY(EditDefaultsOnly,Category = "AI")
 	TArray<TSubclassOf<class AAsteroidBase>> AsteroidClasses;
@@ -44,7 +52,10 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,Category = "Timer")
 	float Count;
-	
+	// UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,Category = "Timer")
+	// float MaxAsteroidCount;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,Category = "Score")
+	int32 TotalScore;
 protected:
 	FTimerHandle SpawnBotsTimer;
 	FTimerHandle CountDownTimer;

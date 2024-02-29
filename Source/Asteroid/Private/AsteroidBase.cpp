@@ -33,13 +33,15 @@ AAsteroidBase::AAsteroidBase()
 	ArrowComp->SetupAttachment(RootComponent);
 	SpawnTheta = 30.0f;
 	bDoOnce =true;
+	
 }
 
 void AAsteroidBase::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-	if(ensure(AttributeComp))
-	AttributeComp->OnHealthChanged.AddDynamic (this,&AAsteroidBase::OnHealthChanged);
+	SetLifeSpan(20.f);
+	 if(ensure(AttributeComp))
+	 AttributeComp->OnHealthChanged.AddDynamic (this,&AAsteroidBase::OnHealthChanged);
 	Mesh->OnComponentHit.AddDynamic(this,&AAsteroidBase::OnHit);
 }
 
@@ -72,15 +74,19 @@ void AAsteroidBase::CreateSubAsteroid()
 
 }
 
+void AAsteroidBase::CollisionTimerElapsed()
+{
+		GetWorld()->GetTimerManager().ClearTimer(CollisionTimer);
+	bDoOnce = true;
+}
+
 
 void AAsteroidBase::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent* OwningComp, float NewHealth, float Delta)
 {
-	if(IsValid(InstigatorActor))
-	{
-		return;
-	}
 	if(NewHealth<=0&&Delta<0.0f)
 	{
+		UE_LOG(LogTemp,Display,TEXT("Destroy"));
+
 		Destroy();
 		CreateSubAsteroid();
 		TObjectPtr<AAsteroidGameModeBase> GameMode = Cast<AAsteroidGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
@@ -88,7 +94,7 @@ void AAsteroidBase::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent
 		{
 			GameMode->bDestroyAsteroid = true;
 		}
-		
+		GameMode->AddToTotalScore(AttributeComp->GetScore());
 	}
 }
 
@@ -114,12 +120,7 @@ void AAsteroidBase::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
 			ATC->ApplyHealthChange(-1);
 			bDoOnce =false;
 			Player->StartHitStop(NormalImpulse);
-			GetWorld()->GetTimerManager().SetTimer(CollisionTimer,FTimerDelegate::CreateLambda(
-				[&](){
-					UE_LOG(LogTemp,Warning,TEXT("Clear Time"));
-			GetWorld()->GetTimerManager().ClearTimer(CollisionTimer);
-					bDoOnce = true;
-		}), 0.5f,false
+			GetWorld()->GetTimerManager().SetTimer(CollisionTimer,this,&AAsteroidBase::CollisionTimerElapsed, 0.5f,false
 			);
 		}
 	}

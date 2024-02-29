@@ -13,6 +13,7 @@ UAttributeComponent::UAttributeComponent(const FObjectInitializer& ObjectInitial
 	PrimaryComponentTick.bCanEverTick = true;
 	HealthMax = 5;
 	 Health = 5;
+	Score = 10;
 	// ...
 }
 
@@ -57,6 +58,11 @@ void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 const float& UAttributeComponent::GetHealth() const
 {
 	return Health;
+}
+
+const int& UAttributeComponent::GetScore() const
+{
+	return Score;
 }
 
 bool UAttributeComponent::IsAlive() const

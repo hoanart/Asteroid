@@ -52,7 +52,7 @@ void ASpaceShip::BeginPlay()
 	
 	if(TObjectPtr<APlayerController> PlayerController = CastChecked<APlayerController>(Controller))
 	{
-		PlayerController->SetShowMouseCursor(true);
+		PlayerController->SetShowMouseCursor(false);
 		if(TObjectPtr<UEnhancedInputLocalPlayerSubsystem> Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
 		{
 			Subsystem->AddMappingContext(DefaultMappingContext,0);
@@ -145,6 +145,31 @@ void ASpaceShip::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent* O
 		FString CombindedString = FString::Printf(TEXT("Delta : %f"),Delta);
 		GEngine->AddOnScreenDebugMessage(-1,0.3f,FColor::Red,CombindedString);
 		OnHealthUIUpdated.Broadcast();
+	}
+	if(NewHealth<=0.0f)
+	{
+		FString CombindedString = FString::Printf(TEXT("Delta : Dead"));
+		GEngine->AddOnScreenDebugMessage(-1,0.3f,FColor::Red,CombindedString);
+		TObjectPtr<APlayerController> PlayerController = Cast<APlayerController>(Controller);
+		if(ensure(PlayerController))
+		{
+			//DisableInput(PlayerController);
+			PlayerController->SetIgnoreLookInput(false);
+			PlayerController->SetIgnoreMoveInput(false);
+			PrimaryActorTick.bCanEverTick = false;
+			
+
+			TObjectPtr<AAsteroidGameModeBase> GameMode = Cast<AAsteroidGameModeBase>(GetWorld()->GetAuthGameMode());
+			if(ensure(GameMode))
+			{
+				GameMode->FinishGame();
+				PlayerController->SetShowMouseCursor(true);
+				UGameplayStatics::SetGamePaused(GetWorld(),true);
+			}
+			Destroy();
+		}
+		
+		
 	}
 }
 

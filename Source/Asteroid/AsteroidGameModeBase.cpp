@@ -14,6 +14,7 @@ AAsteroidGameModeBase::AAsteroidGameModeBase()
 {
 	SpawnTimerInterval = 2.0f;
 	Count = 0.01f;
+	TotalScore = 0.f;
 }
 
 void AAsteroidGameModeBase::StartPlay()
@@ -23,20 +24,30 @@ void AAsteroidGameModeBase::StartPlay()
 	GetWorldTimerManager().SetTimer(CountDownTimer,this,&AAsteroidGameModeBase::CountDownTimerElapsed,1.f,true);
 }
 
+void AAsteroidGameModeBase::AddToTotalScore(const int& Score)
+{
+	TotalScore+=Score;
+
+	FString CombinedString = FString::Printf(TEXT("TotalScore: %f"),TotalScore);
+	GEngine->AddOnScreenDebugMessage(-1,4.0f,FColor::Magenta,CombinedString);
+}
+
+
+
 void AAsteroidGameModeBase::SpawnBotTimerElapsed()
 {
 	int32 NumOfAliveAsteroids = 0;
 	for(TActorIterator<AAsteroidBase> It(GetWorld());It;++It )
 	{
 		TObjectPtr<AAsteroidBase> Asteroid = *It;
+		
 		TObjectPtr<UAttributeComponent> AttributeComp = Cast<UAttributeComponent>( Asteroid->GetComponentByClass(UAttributeComponent::StaticClass()));
 		if(ensure(AttributeComp)&&AttributeComp->IsAlive())
 		{
 			NumOfAliveAsteroids++;
 		}
 	}
-
-	float MaxAsteroidCount = 20.0f;
+	float MaxAsteroidCount = 60.f;
 	if(DifficultyCurve)
 	{
 		MaxAsteroidCount = DifficultyCurve->GetFloatValue(GetWorld()->TimeSeconds);

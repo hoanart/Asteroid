@@ -7,17 +7,23 @@
   <component name="ChangeListManager">
     <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/AI/EQC_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/AI/EQC_Player.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Big.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Big.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Medium.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Medium.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Small.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Small.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/AsteroidMain.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/BP_AsteroidGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/BP_AsteroidGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/CT_Diff.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/CT_Diff.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Resources/Materials/M_Heart.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Resources/Materials/M_Heart.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/UI/WBP_HUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/UI/WBP_HUD.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/UI/WBP_Timer.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FighterSpaceship/UI/WScore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FighterSpaceship/UI/WScore.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FighterSpaceship/UI/WShip.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/AsteroidGameModeBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/AsteroidGameModeBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/AsteroidGameModeBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/AsteroidGameModeBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/AsteroidBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/AsteroidBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/AttributeComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/AttributeComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/BulletProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/BulletProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/ProjectileBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/ProjectileBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/AsteroidBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/AsteroidBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/AttributeComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/AttributeComponent.h" afterDir="false" />
@@ -401,7 +407,12 @@
       <workItem from="1708409614416" duration="15175000" />
       <workItem from="1708582270136" duration="9882000" />
       <workItem from="1708668006735" duration="6421000" />
-      <workItem from="1708754506665" duration="10075000" />
+      <workItem from="1708754506665" duration="11982000" />
+      <workItem from="1708858729012" duration="633000" />
+      <workItem from="1708932128795" duration="8310000" />
+      <workItem from="1709010919357" duration="7636000" />
+      <workItem from="1709100677952" duration="9263000" />
+      <workItem from="1709186900684" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="Add Asteroid Actor and AttributeComp">
       <created>1707907545727</created>
@@ -417,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708419325400</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add EQS and Main UI">
+      <created>1708771687171</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708771687171</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,6 +447,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add Asteroid Actor and AttributeComp" />
     <MESSAGE value="Add Collison and Modify to properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Collison and Modify to properties" />
+    <MESSAGE value="Add EQS and Main UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add EQS and Main UI" />
   </component>
 </project>
