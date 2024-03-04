@@ -9,12 +9,13 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Asteroid/AsteroidGameModeBase.h"
-#include "Blueprint/UserWidget.h"
+#include "Components/AudioComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "Sound/SoundCue.h"
 
 // Sets default values
 ASpaceShip::ASpaceShip()
@@ -44,6 +45,9 @@ ASpaceShip::ASpaceShip()
 	BackGroundEffect = CreateDefaultSubobject<UParticleSystemComponent>("BackGroundEffect");
 	ExhaustEffect = CreateDefaultSubobject<UParticleSystemComponent>("ExhaustEffect");
 	ExhaustEffect->SetupAttachment(RootComponent);
+
+	//AudioComp = CreateDefaultSubobject<UAudioComponent>("AudioComp");
+	//AudioComp->SetupAttachment(RootComponent);
 	
 	ImpulseStrength = 5.0f;
 
@@ -145,6 +149,8 @@ void ASpaceShip::Shoot(const FInputActionValue& Value)
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	SpawnParams.Instigator = this;
 
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(),ShotSound,GetActorLocation());
+	
 	GetWorld()->SpawnActor<AActor>(ProjectileClass,SpawnTM,SpawnParams);
 	GetWorld()->SpawnActor<AActor>(ProjectileClass,SpawnTM2,SpawnParams);
 }
@@ -153,6 +159,7 @@ void ASpaceShip::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent* O
 {
 	if(Delta<0.0f)
 	{
+		UGameplayStatics::PlaySound2D(GetWorld(),CollisionSound);
 		FString CombindedString = FString::Printf(TEXT("Delta : %f"),Delta);
 		GEngine->AddOnScreenDebugMessage(-1,0.3f,FColor::Red,CombindedString);
 		OnHealthUIUpdated.Broadcast();
@@ -161,6 +168,8 @@ void ASpaceShip::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent* O
 	{
 		FString CombindedString = FString::Printf(TEXT("Delta : Dead"));
 		GEngine->AddOnScreenDebugMessage(-1,0.3f,FColor::Red,CombindedString);
+
+		UGameplayStatics::PlaySound2D(GetWorld(),ExplosionSound);
 		TObjectPtr<APlayerController> PlayerController = Cast<APlayerController>(Controller);
 		if(ensure(PlayerController))
 		{

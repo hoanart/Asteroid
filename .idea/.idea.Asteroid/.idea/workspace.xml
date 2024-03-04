@@ -7,9 +7,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="Add UIs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroid.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Big.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Big.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Medium.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Medium.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Small.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Small.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/Maps/AsteroidMain.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Maps/AsteroidMain.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/AsteroidBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/AsteroidBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/AttributeComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/AttributeComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/AsteroidBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/AsteroidBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/AttributeComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/AttributeComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +29,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Developemnt/Unreal/Projects/Asteroid/Source/Asteroid/Private/AsteroidBase.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -397,6 +407,9 @@
       <workItem from="1709010919357" duration="7636000" />
       <workItem from="1709100677952" duration="9263000" />
       <workItem from="1709186900684" duration="5985000" />
+      <workItem from="1709364040625" duration="3306000" />
+      <workItem from="1709530283018" duration="1327000" />
+      <workItem from="1709534816976" duration="1669000" />
     </task>
     <task id="LOCAL-00001" summary="Add Asteroid Actor and AttributeComp">
       <created>1707907545727</created>

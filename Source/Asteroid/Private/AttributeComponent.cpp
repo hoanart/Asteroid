@@ -36,7 +36,7 @@ void UAttributeComponent::BeginPlay()
 	// ...
 	
 }
-
+#if WITH_EDITOR
 void UAttributeComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
@@ -45,7 +45,7 @@ void UAttributeComponent::PostEditChangeProperty(FPropertyChangedEvent& Property
 		Health =HealthMax;
 	}
 }
-
+#endif
 
 // Called every frame
 void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)

@@ -70,12 +70,17 @@ protected:
 	TObjectPtr<class UFloatingPawnMovement> FloatingMovementComp;
 	UPROPERTY(VisibleAnywhere,Category = "Components")
 	TObjectPtr<class UAttributeComponent> AttributeComp;
-
+	
 	UPROPERTY(VisibleAnywhere,Category = "Effects")
 	TObjectPtr<class UParticleSystemComponent> BackGroundEffect;
 	UPROPERTY(VisibleAnywhere,Category = "Effects")
 	TObjectPtr<class UParticleSystemComponent> ExhaustEffect;
-	
+	UPROPERTY(EditDefaultsOnly,Category = "Effects")
+	TObjectPtr<class USoundCue> ShotSound;
+	UPROPERTY(EditDefaultsOnly,Category = "Effects")
+	TObjectPtr<class USoundCue> CollisionSound;
+	UPROPERTY(EditDefaultsOnly,Category = "Effects")
+	TObjectPtr<class USoundCue> ExplosionSound;
 	//TObjectPtr<class APlayerController> PlayerController;
 
 protected:

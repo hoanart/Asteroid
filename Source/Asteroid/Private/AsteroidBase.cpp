@@ -7,11 +7,10 @@
 #include "SpaceShip.h"
 #include "Asteroid/AsteroidGameModeBase.h"
 #include "Components/ArrowComponent.h"
-#include "Components/SphereComponent.h"
 #include "GameFramework/MovementComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
-
+#include "Sound/SoundCue.h"
 // Sets default values
 AAsteroidBase::AAsteroidBase()
 {
@@ -83,10 +82,11 @@ void AAsteroidBase::CollisionTimerElapsed()
 
 void AAsteroidBase::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent* OwningComp, float NewHealth, float Delta)
 {
+
 	if(NewHealth<=0&&Delta<0.0f)
 	{
 		UE_LOG(LogTemp,Display,TEXT("Destroy"));
-
+		UGameplayStatics::PlaySound2D(GetWorld(),ExplosionSound);
 		Destroy();
 		CreateSubAsteroid();
 		TObjectPtr<AAsteroidGameModeBase> GameMode = Cast<AAsteroidGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
@@ -95,6 +95,7 @@ void AAsteroidBase::OnHealthChanged(AActor* InstigatorActor, UAttributeComponent
 			GameMode->bDestroyAsteroid = true;
 		}
 		GameMode->AddToTotalScore(AttributeComp->GetScore());
+		
 	}
 }
 

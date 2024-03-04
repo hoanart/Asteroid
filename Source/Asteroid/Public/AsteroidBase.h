@@ -53,6 +53,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly,Category = "SubActor")
 	TSubclassOf<class AAsteroidBase> SubAsteroidClass;
 
+	UPROPERTY(EditDefaultsOnly,Category = "Effects")
+	TObjectPtr<class USoundCue> ExplosionSound;
 protected:
 	UPROPERTY(EditAnywhere,Category="SubActor")
 	float SpawnTheta;
