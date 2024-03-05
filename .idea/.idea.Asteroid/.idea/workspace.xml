@@ -5,23 +5,12 @@
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="Add UIs">
+    <list default="true" id="b51744bc-ba25-405d-8e45-09d6265f0a89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroid/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroid.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Big.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Big.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Medium.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Medium.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Small.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Actors/BP_Asteroid_Small.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/Maps/AsteroidMain.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Maps/AsteroidMain.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Pawn/BP_SpaceShip.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Asteroid.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/AsteroidBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/AsteroidBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/AttributeComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/AttributeComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Private/SpaceShip.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/AsteroidBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/AsteroidBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/AttributeComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/AttributeComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Asteroid/Public/SpaceShip.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Modes/BP_AsteroidGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Modes/BP_AsteroidGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/Modes/BP_MainMenuMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/Modes/BP_MainMenuMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/UI/WBP_GameOver.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/UI/WBP_GameOver.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DEV/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DEV/UI/WBP_MainMenu.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -409,7 +398,8 @@
       <workItem from="1709186900684" duration="5985000" />
       <workItem from="1709364040625" duration="3306000" />
       <workItem from="1709530283018" duration="1327000" />
-      <workItem from="1709534816976" duration="1669000" />
+      <workItem from="1709534816976" duration="2520000" />
+      <workItem from="1709621049860" duration="1319000" />
     </task>
     <task id="LOCAL-00001" summary="Add Asteroid Actor and AttributeComp">
       <created>1707907545727</created>
@@ -439,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709189284343</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add UI and Audio">
+      <created>1709538964658</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709538964658</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,6 +450,7 @@
     <MESSAGE value="Add Collison and Modify to properties" />
     <MESSAGE value="Add EQS and Main UI" />
     <MESSAGE value="Add UIs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add UIs" />
+    <MESSAGE value="Add UI and Audio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add UI and Audio" />
   </component>
 </project>
